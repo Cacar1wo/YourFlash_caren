@@ -1,0 +1,496 @@
+/* Reset CSS dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Palet Warna Biru dan Abu-abu Soft/Earthy */
+    --color-primary: #997b53; /* Abu-abu Kebiruan Soft (Digunakan untuk CTA/Aksen) */
+    --color-secondary: #ead2b6; /* coklat Sangat Terang (Digunakan untuk Background Sekunder) */
+    --color-dark: hwb(0 9% 91%); /* Biru Tua/Hitam Soft (Teks Utama) */
+    --color-light: #f4e7db; /* Putih Hampir Murni (Background Utama) */
+    --color-accent: #474d53; /* Abu-abu Sedang/coklatMuda Pudar (Aksen Halus) */
+    --color-chocolate-soft: #725f4c; /* Tambahan coklatSoft */
+    
+    /* Font bertema soft */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+ul {
+    list-style: none;
+}
+
+/* -------------------- HEADER & NAVIGATION -------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(248, 249, 250, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.domain-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.logo-text {
+    font-size: 0.75rem;
+    color: var(--color-blue-soft); /* Menggunakan Biru Soft untuk logo text */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.desktop-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav a {
+    font-weight: 400;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.desktop-nav a:hover {
+    background-color: var(--color-secondary);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light);
+    z-index: 999;
+    padding-top: 60px;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.mobile-nav li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+/* -------------------- HERO SECTION -------------------- */
+
+.hero-section {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
+    filter: brightness(0.8) grayscale(20%); /* Soft effect dengan sedikit desaturasi */
+}
+
+.hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+.cta-button {
+    background-color: var(--color-primary); /* Abu Soft */
+    color: var(--color-light);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-dark); /* Biru Tua Soft */
+    transform: scale(1.05);
+}
+
+/* -------------------- PRODUCTS SECTION -------------------- */
+
+.products-section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-dark);
+    position: relative;
+    display: inline-block;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--color-light);
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-accent); /* Border abu soft pada gambar */
+}
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.product-card:hover .product-image-container img {
+    transform: scale(1.1);
+}
+
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-blue-soft); /* Harga menggunakan Biru Soft */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    background-color: var(--color-dark); /* Biru Tua Soft */
+    color: var(--color-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--color-primary); /* Abu Soft */
+}
+
+/* -------------------- ABOUT SECTION (Parallax) -------------------- */
+
+.about-section {
+    background-color: var(--color-secondary); /* Background abu terang */
+    padding: 5rem 5%;
+    text-align: center;
+    background-image: url('images/parallax-bg.jpg'); 
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: var(--color-dark);
+}
+
+.about-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.secondary-cta {
+    display: inline-block;
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.secondary-cta:hover {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+/* -------------------- FOOTER -------------------- */
+
+footer {
+    background-color: var(--color-dark); /* Background Biru Tua Soft */
+    color: var(--color-secondary);
+    padding: 3rem 5%;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-logo, .footer-links, .footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-logo .domain-name {
+    color: var(--color-light);
+}
+
+.footer-logo .logo-text {
+    color: var(--color-blue-soft);
+}
+
+.footer-links h4, .footer-social h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--color-light);
+}
+
+.footer-links ul a {
+    color: var(--color-secondary);
+    display: block;
+    padding: 3px 0;
+}
+
+.footer-social a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--color-secondary);
+}
+
+.footer-social a:hover {
+    color: var(--color-blue-soft);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-primary);
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+
+/* Fade-In Text for Hero */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in-text.delay-1 {
+    animation-delay: 0.5s;
+}
+
+/* Pulse for CTA Button */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(108, 117, 125, 0.7); } /* Menggunakan warna primary baru */
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(108, 117, 125, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(108, 117, 125, 0); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Slide Up for Product Cards */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up-animation {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.slide-up-animation.delay-2 { animation-delay: 0.2s; }
+.slide-up-animation.delay-3 { animation-delay: 0.4s; }
+
+
+/* -------------------- MOBILE BOTTOM BUTTON -------------------- */
+
+.mobile-buy-now {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Tetap WhatsApp Green */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.mobile-buy-now i {
+    margin-right: 5px;
+}
+
+/* -------------------- RESPONSIVENESS (Media Queries) -------------------- */
+
+@media (max-width: 1024px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-section {
+        height: 60vh;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .products-section, .about-section, footer {
+        padding: 3rem 5%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links, .footer-social {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .footer-social a {
+        margin: 0 10px;
+    }
+
+    .mobile-buy-now {
+        display: block; 
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourFlash.com - Capture Every Moment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="domain-name">yourflash.com</a>
+            <span class="logo-text">Shoot By.</span>
+        </div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#dslr">DSLR & Mirrorless</a></li>
+                <li><a href="#film">Film Cameras</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" aria-label="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#" aria-label="User Account"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#dslr">DSLR & Mirrorless</a></li>
+            <li><a href="#film">Film Cameras</a></li>
+            <li><a href="#accessories">Accessories</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="hero" class="hero-section">
+        <img src="img/cam.png" alt="Aesthetic shot of a classic camera on a table" class="hero-image">
+        
+        <h1 class="fade-in-text">The World Through Your Lens.</h1>
+        <p class="fade-in-text delay-1">Curated collection of the finest cameras for the international photographer.</p>
+        <a href="#featured" class="cta-button pulse-animation">Explore Collection</a>
+    </section>
+
+    <section id="featured" class="products-section">
+        <h2 class="section-title">✨ Featured Cameras</h2>
+        <div class="product-grid">
+            <div class="product-card slide-up-animation">
+                <div class="product-image-container">
+                    <img src="img/2.png" alt="Vintage Film Rangefinder Camera">
+                </div>
+                <h3>Mirrorless Cam</h3>
+                <p class="price">$499.00</p>
+                <p class="description">realistic cam build to last.</p>
+                <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+            </div>
+            
+            <div class="product-card slide-up-animation delay-2">
+                <div class="product-image-container">
+                    <img src="img/3.png" alt="Latest Professional Mirrorless Camera">
+                </div>
+                <h3>Pro Compact Cam</h3>
+                <p class="price">$899.00</p>
+                <p class="description">pocket-friendly design with high quality.</p>
+                <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+            </div>
+            
+            <div class="product-card slide-up-animation delay-3">
+                <div class="product-image-container">
+                    <img src="img/4.png" alt="Compact Digital Travel Camera">
+                </div>
+                <h3>Vintage Rangefinder Cam</h3>
+                <p class="price">$1.200.00</p>
+                <p class="description">timeless cam build to capture nature. </p>
+                <button class="add-to-cart-btn">Add to Cart <i class="fas fa-cart-plus"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section parallax-bg">
+        <div class="about-content">
+            <h2 class="section-title">The "Shoot By." Philosophy</h2>
+            <p>At **YourFlash.com**, we believe that the best camera is the one you have with you. Our selection, curated by seasoned photographers, focuses on quality, legacy, and performance. We equip you to **Shoot By.** your unique vision.</p>
+            <a href="#contact" class="secondary-cta">Meet the Curators</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <p class="domain-name">yourflash.com</p>
+                <p class="logo-text">Shoot By.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 YourFlash.com. All rights reserved.
+        </div>
+    </footer>
+
+    <a id="mobile-buy-button" class="mobile-buy-now pulse-animation" 
+       href="https://wa.me/6282243531360?text=I%20am%20interested%20in%20a%20camera%20from%20YourFlash.com" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i> Buy Now
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
